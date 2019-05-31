@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { callbackify } from 'util';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'projet-a-z';
+  isAuth = false;
+
+appareilOne = 'Machine à laverrrrrrr';
+appareilTow = 'Télevisionnnnn';
+appareilThree = 'Ordinateur';
+
+
+  constructor() {
+    setTimeout(
+      () => {
+         this.isAuth = true;
+      }, 4000
+    );
+  }
+  onAllumer() {
+    console.log('on allume tout');
+  }
 }
