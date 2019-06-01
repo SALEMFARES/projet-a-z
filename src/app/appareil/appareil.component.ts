@@ -7,8 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AppareilComponent implements OnInit {
 
-  appareilName: string = 'Machine a lave';
-  appareilStatus: string = 'étein';
+  @Input() appareilName: string;
+  @Input() appareilStatus: string;
+ 
+  // appareilName: string = 'Machine a lave';
+  //appareilStatus: string = 'etaint';
 
   constructor() { }
 

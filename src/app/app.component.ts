@@ -9,6 +9,11 @@ import { callbackify } from 'util';
 export class AppComponent {
   isAuth = false;
 
+
+  appareilOne = 'Machine a laver';
+  appareilTow = 'Frigo';
+  appareilThree = 'Ordinateur';
+
   constructor() {
     setTimeout(
       () => {
@@ -18,6 +23,6 @@ export class AppComponent {
   }
 
   onAllumer() {
-    console.log('On allume tout §')
+    console.log('On allume tout §');
   }
 }
