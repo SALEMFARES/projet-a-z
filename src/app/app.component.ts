@@ -13,7 +13,7 @@ export class AppComponent {
   appareils = [
     {
       name: 'Machine à laver',
-      status: 'étaint'
+      status: 'etaint'
     },
     {
       name: 'Frigo',
