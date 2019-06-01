@@ -9,19 +9,12 @@ import { callbackify } from 'util';
 export class AppComponent {
   isAuth = false;
 
-appareilOne = 'Machine à laverrrrrrr';
-appareilTow = 'Télevisionnnnn';
-appareilThree = 'Ordinateur';
-
-
   constructor() {
     setTimeout(
       () => {
-         this.isAuth = true;
+        this.isAuth = true;
       }, 4000
     );
   }
-  onAllumer() {
-    console.log('on allume tout');
-  }
+
 }
