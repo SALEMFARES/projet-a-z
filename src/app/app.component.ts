@@ -17,4 +17,7 @@ export class AppComponent {
     );
   }
 
+  onAllumer() {
+    console.log('On allume tout §')
+  }
 }
