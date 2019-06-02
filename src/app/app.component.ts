@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { callbackify } from 'util';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +9,14 @@ import { callbackify } from 'util';
 })
 export class AppComponent {
   isAuth = false;
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 2000
+    );
+  });
 
 
   appareils = [
