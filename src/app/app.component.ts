@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { callbackify } from 'util';
+import { AppareilService} from './services/appareil.service';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { callbackify } from 'util';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   isAuth = false;
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
@@ -18,24 +19,10 @@ export class AppComponent {
     );
   });
 
+  appareils: any[];
 
-  appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'etaint'
-    },
-    {
-      name: 'Frigo',
-      status: 'allumé'
-    },
-    {
-      name: 'Ordinateur',
-      status: 'etaint'
-    }
-  ];
-
-
-  constructor() {
+  // tslint:disable-next-line:no-shadowed-variable
+  constructor( private appareilService: AppareilService) {
     setTimeout(
       () => {
         this.isAuth = true;
@@ -43,7 +30,15 @@ export class AppComponent {
     );
   }
 
+  ngOnInit() {
+    this.appareils = this.appareilService.appareils;
+
+  }
+
   onAllumer() {
-    console.log('On allume tout §');
+    this.appareilService.switchOnAll();
+  }
+  onEteindre() {
+    this.appareilService.switchOffAll();
   }
 }
