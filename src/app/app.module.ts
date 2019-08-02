@@ -9,19 +9,34 @@ import { AppareilComponent } from './appareil/appareil.component';
 
 import { AppareilService } from './services/appareil.service';
 
+import { AppareilViewComponent } from './appareil-view/appareil-view.component';
+import {Routes, RouterModule} from '@angular/router';
+import { from } from 'rxjs';
+import { AuthService } from './services/auth.service';
+
+const appRoutes: Routes = [
+  { path: 'appareils', component: AppareilViewComponent},
+ 
+  { path: '', component: AppareilViewComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     MonPremierComponent,
-    AppareilComponent
+    AppareilComponent,
+
+    AppareilViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AppareilService
+    AppareilService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
