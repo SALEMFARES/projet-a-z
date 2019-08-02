@@ -3,6 +3,7 @@
     <ul class="nav navbar-nav">
       <li routerLinkActive="active"><a routerLink="auth">Authentification</a></li>
       <li routerLinkActive="active"><a routerLink="appareils">Appreils</a></li>
+      <li routerLinkActive="active"><a routerLink="edit">Nouvel appareil</a></li>
     </ul>
     <div class="navbar-right"></div>
     <p>Vous étes connecté depuis {{ secondes }} secondes !</p>
@@ -11,6 +12,6 @@
 
 <div class="container">
   <div class="row">
-   <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
 </div>
