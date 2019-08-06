@@ -8,7 +8,7 @@ import { MonPremierComponent } from './mon-premier/mon-premier.component';
 import { AppareilComponent } from './appareil/appareil.component';
 
 import { AppareilService } from './services/appareil.service';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import {Routes, RouterModule} from '@angular/router';
 import { from } from 'rxjs';
@@ -45,7 +45,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
     AppareilService,
